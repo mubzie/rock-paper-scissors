@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// console.log('hello world')
+
+let playerSelection = prompt('what is your choice: rock, paper or scissors?');
+playerSelection = playerSelection.toLowerCase();
+console.log(playerSelection);
+
+function computerPlay() { 
+  return Math.floor(Math.random() * 3) + 1;
+}
+
+let computerSelection = computerPlay();
+if (computerSelection === 1){
+    computerSelection = 'rock'
+} else if (computerSelection === 2) {
+    computerSelection = 'paper'
+} else {
+computerSelection = 'scissors'
+}
+console.log(computerSelection);
+
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        gameTie++
+        return 'Ooops, that was a tie'
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        playerWins++
+        return 'you win!'
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        playerWins++
+        return 'you win!'
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        playerWins++
+    return 'you win!'
+    } else {
+        return 'you lose! computer wins'
+    }
+}
+console.log(playRound(playerSelection, computerSelection));
+
+let finalResult = playRound(); 
+if (playerSelection > computerSelection){
+    return 'player wins the game'
+} else if (computerSelection > playerSelection) {
+    return  'computer wins the game'
+} else {
+    return 'it was a tie'
+} 
+
+for (i = 0; i < 5; i++){
+    game();
+}
+    </script>
+</body>
+</html>
