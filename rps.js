@@ -4,7 +4,7 @@ let computerWins = 0;
 let gameTie = 0;
 
 function game(){
-// this code that input from player and return the value
+// this code takes input from player and return the value
 let playerSelection = prompt('what is your choice: rock, paper or scissors?');
 playerSelection = playerSelection.toLowerCase();
 console.log(playerSelection);
@@ -18,11 +18,11 @@ console.log(computerPlay());
 // random numbers that is been generated is assigned to either RPS
 let computerSelection = computerPlay();
 if (computerSelection === 1){
-    computerSelection = 'rock'
+    computerSelection = 'rock';
 } else if (computerSelection === 2) {
-    computerSelection = 'paper'
+    computerSelection = 'paper';
 } else {
-computerSelection = 'scissors'
+computerSelection = 'scissors';
 }
 console.log(computerSelection);
 
