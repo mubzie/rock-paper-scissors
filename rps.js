@@ -1,66 +1,79 @@
-// this keep track of the game play score
 let playerWins = 0;
 let computerWins = 0;
 let gameTie = 0;
 
-function game(){
-// this code takes input from player and return the value
-let playerSelection = prompt('what is your choice: rock, paper or scissors?');
-playerSelection = playerSelection.toLowerCase();
-console.log(playerSelection);
+function game() {
+  // taking the input from player
+  let playerDecision = prompt(
+    "what is your choice?: rock, paper or scissors?"
+  );
 
-// this program generate random number
-function computerPlay() { 
-  return Math.floor(Math.random() * 3) + 1;
-}
-console.log(computerPlay());
+  // while(playerDecision !== 'rock' || playerDecision !== 'rock' || playerDecision !== 'rock') {
+  //   playerDecision = prompt ('enter the rock option')
+  // }
 
-// random numbers that is been generated is assigned to either RPS
-let computerSelection = computerPlay();
-if (computerSelection === 1){
-    computerSelection = 'rock';
-} else if (computerSelection === 2) {
-    computerSelection = 'paper';
-} else {
-computerSelection = 'scissors';
-}
-console.log(computerSelection);
+  let playerSelection = playerDecision.toLowerCase();
+  console.log(playerSelection);
 
-// this function is the main logic that compare player and computer choice and return the winner 
-// of the game round
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
-        gameTie++
-        return 'Ooops, that was a tie'
-    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        playerWins++
-        return 'you win!'
-    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        playerWins++
-        return 'you win!'
-    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        playerWins++
-        return 'you win!'
+  // computer should have a say. here is the code to make that happen
+  function computerPlay() {
+    let choice = Math.floor(Math.random() * 3) + 1;
+    if (choice === 1) {
+      console.log(choice);
+      return "rock";
+    } else if (choice === 2) {
+      console.log(choice);
+      return "paper";
     } else {
-        computerWins++
-        return 'you lose! computer wins'
+      console.log(choice);
+      return "scissors";
     }
-}
-console.log(playRound(playerSelection, computerSelection));
+  }
+  let computerSelection = computerPlay();
+  console.log(computerSelection);
 
-// this return the final result of the game play
-let gameResult = playRound(); 
-if (playerWins > computerWins){
-    return 'player wins the game';
-} else if (playerWins < computerWins) {
-    return  'computer wins the game';
+  // the logic of the game that compare player and computer choice and determines who win or lose the round
+  function PlayRound(player, computer) {
+    if (playerSelection === computerSelection) {
+      gameTie++;
+      return "Oops, that's a draw";
+    } else if (
+      playerSelection === "rock" &&
+      computerSelection === "scissors"
+    ) {
+      playerWins++;
+      return "You win! Rock beats Scissors";
+    } else if (
+      playerSelection === "paper" &&
+      computerSelection === "rock"
+    ) {
+      playerWins++;
+      return "You win! Paper beats Rock";
+    } else if (
+      playerSelection === "scissors" &&
+      computerSelection === "paper"
+    ) {
+      playerWins++;
+      return "You win! Rock beats Scissors";
+    } else {
+      computerWins++;
+      return `You lose! ${computerSelection} beats ${playerSelection}`;
+    }
+  }
+
+  console.log(PlayRound(playerSelection, computerPlay));
+}
+
+// we want the game to play 5times. here is the code that loop the game
+for (i = 0; i < 5; i++) {
+  console.log(game());
+}
+
+// after the 5round, we should have a winner. this code does that
+if (playerWins > computerWins) {
+  console.log("You won the game. Really?");
+} else if (computerWins > playerWins) {
+  console.log("You lost the game to Computer");
 } else {
-    return 'the game ended in a draw';
-} 
-
-}
-
-// this loop the playround 5 times
-for (i = 0; i < 5; i++){
-    game();
+  console.log("The game ended in a tie");
 }
