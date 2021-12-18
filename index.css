@@ -22,7 +22,7 @@ body {
   background-color: #c2c2aa;
   color: #ffffff;
   border-radius: 8px;
-  width: 414px;
+  width: 500px;
   height: 78px;
   /* margin-top:  */
   margin: auto;
@@ -59,7 +59,7 @@ img {
   text-align: center;
   font-size: 24px;
   font-weight: 900;
-  margin-top: 50px;
+  margin-bottom: 30px;
   color: black;
 }
 
@@ -85,7 +85,7 @@ button {
 input {
   height: 134px;
   width: 134px;
-  border: 1px solid black;
+  border: 1px solid #c2c2aa;
   margin: 20px;
   border-radius: 8px;
 }

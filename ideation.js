@@ -1,6 +1,7 @@
 // GOTTEN A PLACEHOLDER TO SHOW RESULT
-// const resultBoard = document.querySelector('.result-board');
-// resultBoard.textContent = "you won the game";
+const resultBoard = document.querySelector('.result-board');
+const playerResults = document.querySelector('.you');
+const computerResults = document.querySelector('.computer');
 
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', playRound)
@@ -28,6 +29,8 @@ function playRound(e) {
     console.log('Total Draw: ' + gameTie)
     console.log('player win ' + playerWins)
     console.log('computer score ' + computerWins)
+    playerResults.textContent = `You: ${playerWins}`;
+    resultBoard.textContent = "Oops, that's a draw";
     console.log("Oops, that's a draw");
   } else if (
     playerSelection === "rock" &&
@@ -35,8 +38,11 @@ function playRound(e) {
   ) {
     playerWins++;
     console.log('Total Draw: ' + gameTie)
+    resultBoard.textContent = `${playerWins}`;
     console.log('player score ' + playerWins)
     console.log('computer score ' + computerWins)
+    playerResults.textContent = `You: ${playerWins}`;
+    resultBoard.textContent = "You win! rock beats scissors";
     console.log("You win! rock beats scissors");
   } else if (
     playerSelection === "paper" &&
@@ -44,8 +50,11 @@ function playRound(e) {
   ) {
     playerWins++;
     console.log('Total Draw: ' + gameTie)
+    resultBoard.textContent = `${playerWins}`;
     console.log('player score ' + playerWins)
     console.log('computer score ' + computerWins)
+    playerResults.textContent = `You: ${playerWins}`;
+    resultBoard.textContent = "You win! paper beats rock";
     console.log("You win! paper beats rock");
   } else if (
     playerSelection === "scissors" &&
@@ -53,21 +62,27 @@ function playRound(e) {
   ) {
     playerWins++;
     console.log('Total Draw: ' + gameTie)
+    resultBoard.textContent = `${playerWins}`;
     console.log('player score ' + playerWins)
     console.log('computer score ' + computerWins)
+    playerResults.textContent = `You: ${playerWins}`;
+    resultBoard.textContent = "You win! scissors beats paper";
     console.log("You win! scissors beats paper");
   } else {
     computerWins++;
     console.log('Total Draw: ' + gameTie)
+    resultBoard.textContent = `${playerWins}`;
     console.log('player score ' + playerWins)
     console.log('computer score ' + computerWins)
+    computerResults.textContent = `Computer: ${computerWins}`;
+    resultBoard.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
     console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
   }
 
   if(playerWins >= 5) {
-    console.log('You won the game')
+    resultBoard.textContent = 'You won the game';
   } else if ( computerWins >= 5) {
-  console.log('Computer won the game')
+    resultBoard.textContent = 'Computer won the game';
   }
 }
 
@@ -85,3 +100,5 @@ function computerPlay() {
       return "scissors";
     }
   }
+
+  

@@ -61,9 +61,9 @@ function game() {
 }
 
 // we want the game to play 5times. here is the code that loop the game
-// for (i = 0; i < 5; i++) {
-//   console.log(game());
-// }
+for (i = 0; i < 5; i++) {
+  console.log(game());
+}
 
 // after the 5round, we should have a winner. this code does that
 if (playerWins > computerWins) {
