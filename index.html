@@ -5,26 +5,26 @@
     <title>Document</title>
     <!-- <script src="rps.js"></script> -->
     <link rel="stylesheet" href="index.css" />
+    <script src="ideation.js" defer></script>
+    <!-- <script src="rps.js" defer></script> -->
   </head>
   <body>
-    <div class="header">
-      <h1>ROCK - PAPPER - SCISSORS</h1>
+    <div id="header">
+      <h1>ROCK - PAPER - SCISSORS</h1>
     </div>
     <div class="main-container">
       <div class="title-board">
-        <h1>You vs Computer</h1>
-      </div>
-      <div class="choice-board">
-        <img src="Image/rock.png" alt="" />
-        <img src="Image/paper.png" alt="" />
-        <img src="Image/scissors.png" alt="" />
-      </div>
-      <div class="score-board">
-        <!-- score -->
-        <div class="wrapper-sc">
+        <h1 class="result-board">You vs Computer</h1>
+        <div class="score-board">
           <div class="you">You:</div>
           <div class="computer">Computer:</div>
         </div>
+      </div>
+
+      <div id="choice-board">
+        <input id="rock" type="image" src="image/rock.png" />
+        <input id="paper" type="image" src="image/paper.png" />
+        <input id="scissors" type="image" src="image/scissors.png" />
       </div>
     </div>
     <div class="footer">

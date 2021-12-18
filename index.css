@@ -1,12 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+
 body {
   background-color: beige;
+  font-family: "Space Grotesk", sans-serif;
   margin: 0;
   display: flex;
   height: 100vh;
   flex-direction: column;
 }
 
-.header {
+#header {
   height: 86px;
   background-color: #c2c2aa;
   color: #ffffff;
@@ -30,12 +33,14 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
+  margin-bottom: 40px;
 }
 
-.choice-board {
+#choice-board {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 img {
@@ -44,15 +49,18 @@ img {
   width: 130px;
   height: 130px;
   margin: 50px;
+  /* cursor: pointer; */
 }
 
 .score-board {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: center;
+  gap: 100px;
   text-align: center;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 900;
+  margin-top: 50px;
+  color: black;
 }
 
 .wrapper-sc {
@@ -67,4 +75,17 @@ img {
   color: #ffffff;
   font-weight: 900;
   text-align: center;
+}
+
+button {
+  width: 134px;
+  height: 134px;
+}
+
+input {
+  height: 134px;
+  width: 134px;
+  border: 1px solid black;
+  margin: 20px;
+  border-radius: 8px;
 }

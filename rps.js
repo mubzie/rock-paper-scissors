@@ -3,14 +3,10 @@ let computerWins = 0;
 let gameTie = 0;
 
 function game() {
-  // taking the input from player
+  // taking input from player
   let playerDecision = prompt(
     "what is your choice?: rock, paper or scissors?"
   );
-
-  // while(playerDecision !== 'rock' || playerDecision !== 'rock' || playerDecision !== 'rock') {
-  //   playerDecision = prompt ('enter the rock option')
-  // }
 
   let playerSelection = playerDecision.toLowerCase();
   console.log(playerSelection);
@@ -65,9 +61,9 @@ function game() {
 }
 
 // we want the game to play 5times. here is the code that loop the game
-for (i = 0; i < 5; i++) {
-  console.log(game());
-}
+// for (i = 0; i < 5; i++) {
+//   console.log(game());
+// }
 
 // after the 5round, we should have a winner. this code does that
 if (playerWins > computerWins) {
