@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Document</title>
-    <!-- <script src="rps.js"></script> -->
+    <title>rock-papper-scissors</title>
+    <link rel="shortcut icon" href="Image/favi.png.png" type="image/png" />
     <link rel="stylesheet" href="index.css" />
-    <script src="ideation.js" defer></script>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div id="header">
@@ -13,7 +14,10 @@
     </div>
     <div class="main-container">
       <div class="title-board">
-        <h1 class="result-board">You vs Computer</h1>
+        <h1 class="result-board">
+          You vs Computer <br />
+          first to reach 5 win the game
+        </h1>
       </div>
       <div class="score-board">
         <div class="you">You: 0</div>
@@ -26,7 +30,16 @@
       </div>
     </div>
     <div class="footer">
-      <h3>copyright &copy 2021 mubzie</h3>
+      <p>
+        copyright &copy
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        mubzie
+        <a href="https://github.com/mubzie" target="_blank">
+          <i class="fa fa-github"></i
+        ></a>
+      </p>
     </div>
   </body>
 </html>
