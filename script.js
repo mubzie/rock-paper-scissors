@@ -57,29 +57,32 @@ function playRound(e) {
     resultBoard.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
   }
 
-  if(playerWins >= 5) {
+  if(playerWins == 5) {
     resultBoard.textContent = `You won the game. ${playerSelection} beats ${computerSelection}`;
     resultBoard.style.color = "green";
-    resultBoard.style.fontWeight = "800";
-  } else if ( computerWins >= 5) {
+    resultBoard.style.fontWeight = "900";
+    removeEvent();
+  } else if ( computerWins == 5) {
     resultBoard.textContent = `You lost! computer won the game. ${playerSelection} is beaten by ${computerSelection}`;
     resultBoard.style.color = "#CA0B00";
     resultBoard.style.fontWeight = "900";
-  }
+    removeEvent();
+}
+}
+
+function removeEvent() {
+  rock.removeEventListener('click', playRound);
+  paper.removeEventListener('click', playRound);
+  scissors.removeEventListener('click', playRound);
 }
 
 function computerPlay() {
     let choice = Math.floor(Math.random() * 3) + 1;
     if (choice === 1) {
-      console.log(choice);
       return "rock";
     } else if (choice === 2) {
-      console.log(choice);
       return "paper";
     } else {
-      console.log(choice);
       return "scissors";
     }
   }
-
-  
