@@ -74,7 +74,7 @@ function playRound(e) {
 
 function retryButton() {
   const button = document.createElement('button');
-  button.setAttribute("style", "background-color: #c2c2aa; color: #ffffff; width: 120px; height: 40px; border: none; border-radius: 8px; font-size: 18px; font-weight: 700; margin-bottom: 20px; cursor: pointer; transition-delay: 2s");
+  button.setAttribute("style", "background-color: #c2c2aa; color: #ffffff; width: 120px; height: 40px; border: none; border-radius: 8px; font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 900; margin-bottom: 20px; cursor: pointer; transition-delay: 2s");
   button.textContent = "Try Again";
   retryBtn.appendChild(button);
 

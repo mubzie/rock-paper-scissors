@@ -22,7 +22,7 @@ body {
   color: #ffffff;
   border-radius: 8px;
   width: 550px;
-  margin: auto;
+  margin: 50px auto 50px;
   text-align: center;
 }
 
@@ -37,6 +37,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .score-board {
@@ -71,6 +72,7 @@ input:hover {
   background-color: #c2c2aa;
   color: black;
   text-align: center;
+  font-size: 18px;
   font-weight: 900;
 }
 
