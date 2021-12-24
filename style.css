@@ -30,14 +30,13 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 #choice-board {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
 }
 
 .score-board {
@@ -49,6 +48,23 @@ body {
   font-weight: 900;
   margin-bottom: 30px;
   color: black;
+}
+
+input {
+  height: 134px;
+  width: 134px;
+  border: 1px solid #c2c2aa;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+input:hover {
+  background-color: #c2c2aa;
+}
+
+.retry-btn {
+  display: flex;
+  justify-content: center;
 }
 
 .footer {
@@ -65,15 +81,4 @@ body {
 
 .fa-github:hover {
   transform: scale(1.4);
-}
-input {
-  height: 134px;
-  width: 134px;
-  border: 1px solid #c2c2aa;
-  margin: 20px;
-  border-radius: 8px;
-}
-
-input:hover {
-  background-color: #c2c2aa;
 }

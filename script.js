@@ -1,7 +1,7 @@
-// GOTTEN A PLACEHOLDER TO SHOW RESULT
 const resultBoard = document.querySelector('.result-board');
 const playerResults = document.querySelector('.you');
 const computerResults = document.querySelector('.computer');
+const retryBtn = document.querySelector('.retry-btn');
 
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', playRound)
@@ -11,6 +11,8 @@ paper.addEventListener('click', playRound)
 
 const scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', playRound)
+
+retryBtn.addEventListener('click', () => location.reload());
 
 let playerWins = 0;
 let computerWins = 0;
@@ -54,20 +56,28 @@ function playRound(e) {
     computerWins++;
     resultBoard.textContent = `${playerWins}`;
     computerResults.textContent = `Computer: ${computerWins}`;
-    resultBoard.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+    resultBoard.textContent = `You lose! ${playerSelection} is beaten by ${computerSelection}`;
   }
 
   if(playerWins == 5) {
     resultBoard.textContent = `You won the game. ${playerSelection} beats ${computerSelection}`;
-    resultBoard.style.color = "green";
-    resultBoard.style.fontWeight = "900";
+    resultBoard.setAttribute("style", "color: green; font-weight: 900");
+    retryButton();
     removeEvent();
   } else if ( computerWins == 5) {
     resultBoard.textContent = `You lost! computer won the game. ${playerSelection} is beaten by ${computerSelection}`;
-    resultBoard.style.color = "#CA0B00";
-    resultBoard.style.fontWeight = "900";
+    resultBoard.setAttribute("style", "color: #CA0B00; font-weight: 900");
+    retryButton();
     removeEvent();
 }
+}
+
+function retryButton() {
+  const button = document.createElement('button');
+  button.setAttribute("style", "background-color: #c2c2aa; color: #ffffff; width: 120px; height: 40px; border: none; border-radius: 8px; font-size: 18px; font-weight: 700; margin-bottom: 20px; cursor: pointer; transition-delay: 2s");
+  button.textContent = "Try Again";
+  retryBtn.appendChild(button);
+
 }
 
 function removeEvent() {
