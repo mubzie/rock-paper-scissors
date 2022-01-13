@@ -4,16 +4,16 @@ let gameTie = 0;
 
 function game() {
   // taking input from player
-  let playerDecision = prompt(
+  const playerDecision = prompt(
     "what is your choice?: rock, paper or scissors?"
   );
 
-  let playerSelection = playerDecision.toLowerCase();
+  const playerSelection = playerDecision.toLowerCase();
   console.log(playerSelection);
 
   // computer should have a say. here is the code to make that happen
   function computerPlay() {
-    let choice = Math.floor(Math.random() * 3) + 1;
+    const choice = Math.floor(Math.random() * 3) + 1;
     if (choice === 1) {
       console.log(choice);
       return "rock";
@@ -25,7 +25,7 @@ function game() {
       return "scissors";
     }
   }
-  let computerSelection = computerPlay();
+  const computerSelection = computerPlay();
   console.log(computerSelection);
 
   // the logic of the game that compare player and computer choice and determines who win or lose the round

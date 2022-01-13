@@ -33,7 +33,7 @@ function playRound(e) {
     computerSelection === "scissors"
   ) {
     playerWins++;
-    resultBoard.textContent = `${playerWins}`;
+    // resultBoard.textContent = `${playerWins}`;
     playerResults.textContent = `You: ${playerWins}`;
     resultBoard.textContent = "You win! rock beats scissors";
   } else if (
@@ -41,7 +41,7 @@ function playRound(e) {
     computerSelection === "rock"
   ) {
     playerWins++;
-    resultBoard.textContent = `${playerWins}`;
+    // resultBoard.textContent = `${playerWins}`;
     playerResults.textContent = `You: ${playerWins}`;
     resultBoard.textContent = "You win! paper beats rock";
   } else if (
@@ -49,12 +49,12 @@ function playRound(e) {
     computerSelection === "paper"
   ) {
     playerWins++;
-    resultBoard.textContent = `${playerWins}`;
+    // resultBoard.textContent = `${playerWins}`;
     playerResults.textContent = `You: ${playerWins}`;
     resultBoard.textContent = "You win! scissors beats paper";
   } else {
     computerWins++;
-    resultBoard.textContent = `${playerWins}`;
+    // resultBoard.textContent = `${playerWins}`;
     computerResults.textContent = `Computer: ${computerWins}`;
     resultBoard.textContent = `You lose! ${playerSelection} is beaten by ${computerSelection}`;
   }
