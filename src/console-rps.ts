@@ -1,19 +1,19 @@
-let playerWins = 0;
-let computerWins = 0;
-let gameTie = 0;
+let playerWins: number = 0;
+let computerWins: number = 0;
+let gameTie: number = 0;
 
 function game() {
   // taking input from player
-  const playerDecision = prompt(
+  const playerDecision: string | null = prompt(
     "what is your choice?: rock, paper or scissors?"
   );
 
-  const playerSelection = playerDecision.toLowerCase();
+  const playerSelection = playerDecision?.toLowerCase() ?? "";
   console.log(playerSelection);
 
   // computer should have a say. here is the code to make that happen
-  function computerPlay() {
-    const choice = Math.floor(Math.random() * 3) + 1;
+  function computerPlay(): "rock" | "paper" | "scissors" {
+    const choice: number = Math.floor(Math.random() * 3) + 1;
     if (choice === 1) {
       console.log(choice);
       return "rock";
@@ -29,20 +29,17 @@ function game() {
   console.log(computerSelection);
 
   // the logic of the game that compare player and computer choice and determines who win or lose the round
-  function PlayRound(player, computer) {
+  function PlayRound(
+    player: string,
+    computer: () => "rock" | "paper" | "scissors"
+  ) {
     if (playerSelection === computerSelection) {
       gameTie++;
       return "Oops, that's a draw";
-    } else if (
-      playerSelection === "rock" &&
-      computerSelection === "scissors"
-    ) {
+    } else if (playerSelection === "rock" && computerSelection === "scissors") {
       playerWins++;
       return "You win! Rock beats Scissors";
-    } else if (
-      playerSelection === "paper" &&
-      computerSelection === "rock"
-    ) {
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
       playerWins++;
       return "You win! Paper beats Rock";
     } else if (
@@ -61,7 +58,7 @@ function game() {
 }
 
 // we want the game to play 5times. here is the code that loop the game
-for (i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) {
   console.log(game());
 }
 
