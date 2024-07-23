@@ -21,7 +21,7 @@ let computerWins: number = 0;
 let gameTie: number = 0;
 
 function playRound(e: MouseEvent): void {
-  if (e.currentTarget instanceof HTMLHRElement) {
+  if (e.currentTarget instanceof HTMLElement) {
     let playerSelection = e.currentTarget.id;
 
     let computerSelection = computerPlay();

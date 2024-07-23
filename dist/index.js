@@ -3,18 +3,18 @@ const resultBoard = document.querySelector(".result-board");
 const playerResults = document.querySelector(".you");
 const computerResults = document.querySelector(".computer");
 const retryBtn = document.querySelector(".retry-btn");
-const rock = document.querySelector("#rock");
-rock === null || rock === void 0 ? void 0 : rock.addEventListener("click", playRound);
-const paper = document.querySelector("#paper");
-paper === null || paper === void 0 ? void 0 : paper.addEventListener("click", playRound);
-const scissors = document.querySelector("#scissors");
-scissors === null || scissors === void 0 ? void 0 : scissors.addEventListener("click", playRound);
+const rockBtn = document.querySelector("#rock");
+rockBtn === null || rockBtn === void 0 ? void 0 : rockBtn.addEventListener("click", playRound);
+const paperBtn = document.querySelector("#paper");
+paperBtn === null || paperBtn === void 0 ? void 0 : paperBtn.addEventListener("click", playRound);
+const scissorsBtn = document.querySelector("#scissors");
+scissorsBtn === null || scissorsBtn === void 0 ? void 0 : scissorsBtn.addEventListener("click", playRound);
 retryBtn === null || retryBtn === void 0 ? void 0 : retryBtn.addEventListener("click", () => location.reload());
 let playerWins = 0;
 let computerWins = 0;
 let gameTie = 0;
 function playRound(e) {
-    if (e.currentTarget instanceof HTMLHRElement) {
+    if (e.currentTarget instanceof HTMLElement) {
         let playerSelection = e.currentTarget.id;
         let computerSelection = computerPlay();
         if (playerSelection === computerSelection) {
@@ -68,9 +68,9 @@ function retryButton() {
     retryBtn.appendChild(button);
 }
 function removeEvent() {
-    rock === null || rock === void 0 ? void 0 : rock.removeEventListener("click", playRound);
-    paper === null || paper === void 0 ? void 0 : paper.removeEventListener("click", playRound);
-    scissors === null || scissors === void 0 ? void 0 : scissors.removeEventListener("click", playRound);
+    rockBtn === null || rockBtn === void 0 ? void 0 : rockBtn.removeEventListener("click", playRound);
+    paperBtn === null || paperBtn === void 0 ? void 0 : paperBtn.removeEventListener("click", playRound);
+    scissorsBtn === null || scissorsBtn === void 0 ? void 0 : scissorsBtn.removeEventListener("click", playRound);
 }
 function computerPlay() {
     let choice = Math.floor(Math.random() * 3) + 1;
